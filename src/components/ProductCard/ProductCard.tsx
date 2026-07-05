@@ -38,22 +38,24 @@ export function ProductCard({ product, onAddToCart, onViewDetails }: ProductCard
                 Rating: {product.rating}
             </p>
 
-            <button
-                className="product-card__details-button"
-                type="button"
-                onClick={() => onViewDetails(product)}
-            >
-                View details
-            </button>
+            <div className="product-card__actions">
+                <button
+                    className="product-card__details-button"
+                    type="button"
+                    onClick={() => onViewDetails(product)}
+                >
+                    View details
+                </button>
 
-            <button
-                className="product-card__button"
-                type="button"
-                disabled={!product.inStock}
-                onClick={() => onAddToCart(product)}
-            >
-                {product.inStock ? "Add to cart" : "Out of stock"}
-            </button>
+                <button
+                    className="product-card__button"
+                    type="button"
+                    disabled={!product.inStock}
+                    onClick={() => onAddToCart(product)}
+                >
+                    {product.inStock ? "Add to cart" : "Out of stock"}
+                </button>
+            </div>
         </div>
     );
 }
