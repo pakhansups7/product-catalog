@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f4f6fb;
+    --surface: #ffffff;
+    --surface-soft: #f8fafc;
+    --text: #111827;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --danger: #dc2626;
+    --danger-hover: #b91c1c;
+    --success: #16a34a;
+    --warning: #f59e0b;
+    --shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 12px 32px rgba(15, 23, 42, 0.1);
+    --radius-md: 14px;
+    --radius-lg: 20px;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background:
+            radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 34rem),
+            var(--bg);
+    color: var(--text);
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    width: min(100% - 32px, 1240px);
+    margin: 0 auto;
+    padding: 28px 0 48px;
+}
+
+.app-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: start;
+    margin-bottom: 28px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(12px);
+}
+
+.app-header h1 {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.05em;
+}
+
+.app-header > button {
+    align-self: end;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 120px;
+    height: 44px;
+    padding: 0 18px;
+    color: #ffffff;
+    background: var(--primary);
+    border: none;
+    border-radius: 999px;
+    font-weight: 800;
+    box-shadow: 0 10px 24px rgba(37, 99, 235, 0.28);
+    transition: transform 0.16s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.app-header > button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.35);
+}
+
+.app-header > button:active {
+    transform: translateY(0);
+}
+
+.app-main {
+    display: block;
+}
+
+.products-section {
+    min-width: 0;
+}
+
+.cart-drawer {
+    position: fixed;
+    inset: 0 0 0 auto;
+    z-index: 1000;
+    width: min(430px, 100%);
+    height: 100vh;
+    padding: 24px;
+    overflow-y: auto;
+    background: var(--surface);
+    box-shadow: -18px 0 48px rgba(15, 23, 42, 0.22);
+    animation: cart-drawer-slide 0.24s ease-out;
+}
+
+@keyframes cart-drawer-slide {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.cart-drawer > button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding: 0 14px;
+    margin-bottom: 18px;
+    color: var(--text);
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-weight: 800;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.cart-drawer > button:hover {
+    background: #eef2ff;
+    border-color: #c7d2fe;
+}
+
+@media (max-width: 820px) {
+    .app {
+        width: min(100% - 20px, 1240px);
+        padding-top: 16px;
+    }
+
+    .app-header {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    .app-header > button {
+        width: 100%;
+    }
+}
+
+.cart-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(2px);
+    animation: cart-overlay-fade 0.2s ease-out;
+}
+
+@keyframes cart-overlay-fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.products-section__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.products-section__count {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.products-section__reset-button {
+    height: 36px;
+    padding: 0 14px;
+    color: var(--primary);
+    background: #eef2ff;
+    border: 1px solid #c7d2fe;
+    border-radius: 999px;
+    font-weight: 800;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.products-section__reset-button:hover {
+    background: #e0e7ff;
+    border-color: #a5b4fc;
+    transform: translateY(-1px);
+}
+
+.app-notification {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1200;
+    max-width: 320px;
+    padding: 14px 18px;
+    color: #ffffff;
+    background: var(--text);
+    border-radius: 999px;
+    box-shadow: var(--shadow-md);
+    font-weight: 800;
+    animation: app-notification-in 0.2s ease-out;
+}
+
+@keyframes app-notification-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

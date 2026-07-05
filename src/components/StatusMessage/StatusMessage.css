@@ -1,0 +1,42 @@
+.status-message {
+    width: min(100% - 32px, 520px);
+    margin: 120px auto;
+    padding: 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.status-message__title {
+    margin: 0;
+    color: var(--text);
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+
+.status-message__description {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.status-message__button {
+    height: 42px;
+    padding: 0 18px;
+    margin-top: 20px;
+    color: #ffffff;
+    background: var(--primary);
+    border: none;
+    border-radius: 12px;
+    font-weight: 800;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.status-message__button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}

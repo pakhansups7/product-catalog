@@ -1,0 +1,117 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.cart__empty {
+    padding: 24px;
+    margin: 0;
+    color: var(--muted);
+    background: var(--surface-soft);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-weight: 800;
+}
+
+.cart__title {
+    margin: 0 0 18px;
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+
+.cart__list {
+    display: grid;
+    gap: 14px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.cart__summary {
+    display: grid;
+    gap: 8px;
+    padding: 16px;
+    margin-top: 18px;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+}
+
+.cart__summary-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.cart__summary-row span:last-child {
+    color: var(--text);
+    font-weight: 800;
+}
+
+.cart__summary-total {
+    padding-top: 10px;
+    margin-top: 4px;
+    border-top: 1px solid var(--border);
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 950;
+}
+
+.cart__clear-button {
+    width: 100%;
+    height: 44px;
+    margin-top: 14px;
+    color: #ffffff;
+    background: var(--danger);
+    border: none;
+    border-radius: 13px;
+    font-weight: 850;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.cart__clear-button:hover {
+    background: var(--danger-hover);
+    transform: translateY(-1px);
+}
+
+.cart-item__controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.cart-item__quantity {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    height: 36px;
+    padding: 0 10px;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-weight: 800;
+}
+
+.cart-item__button {
+    min-width: 38px;
+    height: 36px;
+    padding: 0 12px;
+    color: #ffffff;
+    background: var(--primary);
+    border: none;
+    border-radius: 10px;
+    font-weight: 800;
+}
+
+.cart-item__button--remove {
+    margin-left: auto;
+    background: var(--danger);
+}
