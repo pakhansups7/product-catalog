@@ -32,3 +32,7 @@ A small React + TypeScript product catalog with cart functionality.
 ```bash
 npm install
 npm run dev
+
+## Live Demo
+
+https://pakhansups7.github.io/product-catalog/
